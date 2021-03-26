@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>   
+	<meta charset="utf8"/>
+	<meta name="viewport" content="widt=device-width, initial-scale=1.0"/>
+<title> Ciclo Fetch</title>
+<link href = "estilos.css" rel="stylesheet">
+</head>
+<header>
+	Ciclo Fetch
+</header>
+<body>
+<div class="principal">
+  <img src="img8.png" align="middle" height="200">	
+<h2> Definicion</h2>
+<p>El encargado de ejecutar un programa en una computadora <br>
+u otro sistema computacional es el CPU, lo realiza <br>
+siguiendo el llamado ciclo Fetch Decode Execute con este ciclo<br>
+se ejecutan todas las tareas que una computadora puede realizar </p>
+</div>
+
+
+<div class ="personajes">
+<h2> Etapas </h2>
+<ul type="none">
+<li> <strong>Traer las instrucciones</strong> </li>
+<dd> se obtiene la instruccion desde memoria y se almacena<br>
+	en el registro  del CPU para instrucciones </dd>
+<li><strong>Decodificar la instruccion</strong> </li>
+<dd> se identifica el modo de direccionamiento de la <br>
+	instruccion y la ubicacion de los datos a tratar <br>
+	ya sea de memoria, registro o instruccion directamente
+</dd>
+<li><strong>Carga de Parametros </strong> </li>
+<dd> se ejecuta la lectura, cargando todos los datos <br>
+	identificados en el paso anterios </dd>
+<li><strong>Ejecutar </strong> </li>
+<dd> Se ejecuta la instruccion ya configurada, realiza <br>
+	la tarea indicada, y sea una suma, resta almacenar <br>
+informacion extraer informacion etc </dd>
+<li><strong>Almacenar</strong> </li>
+<dd> se almacena el resultado otenido de ejecutar la instruccion, <br>
+	por ejemplo el resultado de una suma o un indice <br>
+	como resultado de exito de almacenar u obtener informacion <br>
+de un archivo, entre otros. </dd>
+<li><strong>Actualizar</strong> PC</li>
+<dd>Esta etapa es la de actualizar el registro PC <br>
+	que contiene la siguiente direccion a ejecutar
+</ul>
+</div>
+
+
+<div class ="capitulos">
+  <h2> procesos </h2>
+  <h2>Fetch o Captacion</h2>
+  <p> En la que la instruccion es captada desde la memoria RAM <br>
+  y copiada a dentro del procesador </p>
+  <h2>Decode o Decodificacion</h2>
+  <p> En la que la instruccion previamente captada es <br>
+  	decodificada y enviada a las unidades de ejecucion 
+   </p>
+  <h2>Execute o Ejecucion </h2>
+  <p> Donde la instruccion es resuelta y el resultado escrito en los <br>
+  	registros internos del procesador o en una direccion de memoria de la RAM
+   </p>
+   <p> estas tres etapas se cumplen en todo procesador existe una cuarta etapa <br>
+   	que es la de Write-Back que es cuando las unidades de ejecucion <br>
+   	escriben el resultado pero normalmente esto se cuenta dentro de la etapa de ejecucion<br>
+   	del ciclo de instruccion </p>
+  </div>
+
+<div class = "cap2">
+
+	<h1>Primera Etapa del ciclo de instruccion Fetch</h1>
+	<img src="FetchProcess.png" align="middle" height="200">
+	<p> la primera etapa del ciclo de instruccion se encarga <br>
+	de captar las instrucciones que hay en la memoria RAM <br>
+	asignada al procesador a traves de una serie de unidades <br>
+	y registros que son las siguientes </p>
+	<ul>
+	<li> Program Counter o Contador de programa </li>
+	<dd> el cual apunta a la siguiente linea de memoria <br>
+	donde se encuetra la siguiente instruccion del procesador <br>
+	Se incrementa su valor en 1 cada vez que se termina un ciclo<br>
+	completo de instruccion o cuando una instruccion de salto cambia <br>
+	el valor del contador de programa</dd>
+	<li>Memory Addres registrer o registro de direccionamiento de memoria </li>
+	<dd>	El Mar copia el contenido del pc y lo envia a la RAM a traves <br>
+		de los pines de direccionamiento de la CPU, los cuales estan cableados <br>
+	con los pines de direccionamiento de la propia memoria RAM </dd>
+	<li>Memory Data Registrer o registro de datos a memoria </li>
+	<dd> en el caso que la CPU tenga que realiar una lectura de memoria <br>
+		lo que hace el MDR es copiar el conenido de esa direccion de memoria<br>
+	a un registro interno de la CPU, el cual es un registro temporal </dd>
+	<li>Instruccion Registrer o registro de instruccion</li>
+	<dd>la parte final de la etapa de captacion o fetch es la escritura <br>
+		de la instruccion en el registro de instruccion, del cual la unidad<br>
+		de control del procesador copiara su contenido para la segunda etapa <br>
+		del ciclo de instrucccion 
+</dd>
+</ul>
+</div>
+
+
+<div class= "cap3">
+	<h1> segunda Etapa del ciclo de instruccion Fetch </h1>
+	<img src="fetch.jpg" align="middle" height="200">
+	<h1> Decode </h1>
+	<p> hay diferentes tipos de instrucciones y no todas hacen lo mismo <br>
+	por lo que dependiendo del tipo de instruccion necesitamos saber hacia <br>
+	hacia que unidad de ejecucion se van a enviar y la manera clasica de hacerlo <br>
+	es a traves de lo que llamamos un decodificador, el cual toma cada instruccion <br>
+	la divide internamiente segun el opcode o instruccion y el dato o la direccion <br>
+de memoria donde se encuentra este </p>
+<h1>Tercera etapa: Execute </h1>
+<img src="fetch2.png" align="middle" height="200">
+<ul>
+	<li> instrucciones de movimiento de bits </li>
+	<dd>en el cual se manipulan el orden de los bits <br>
+	que contienen el dato </dd>
+	<li>instrucciones aritmecas </li>
+	<dd> Donde se realizan operaciones matematicas y <br>
+		tambien logicas, estas se solucionan en las <br>
+	llamadas ALU </dd>
+	<li>instrucciones de salto </li>
+	<dd>en la que se cambian el siguiente valor del contador de programa <br>
+	lo que permite utilizar el codigo de manera recursiva </dd>
+	<li> intrucciones de memoria </li>
+	<dd> son con las que el procesador lee y escribe la informacion de <br>
+		la memoria del sistema </dd>
+	</ul>
+</div>
+
+
+</body>
+</html>
